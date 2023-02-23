@@ -4,6 +4,7 @@ pipeline {
     enviorment{
         DOCKER = credentials('Docker')
     }
+    
     stages {
         stage('Build') {
             steps {
