@@ -2,16 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                sh 'docker build -t thomptyler/flaskapp .'
-            }
-        }
         stage('Login and Push'){
-            steps{
+            steps {
                 script{
                     withDockerRegistry(credentialsId: 'Docker') {
-                            docker.build('thomptyler/flaskapp').push('latest')
+                        docker.build('thomptyler/flaskapp').push('latest')
                     }
                 }
             }
