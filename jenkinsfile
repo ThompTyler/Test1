@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    enviorment{
+    environment{
         DOCKER = credentials('Docker')
     }
-    
+
     stages {
         stage('Build') {
             steps {
