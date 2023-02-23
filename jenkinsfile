@@ -16,5 +16,10 @@ pipeline {
                 echo '$DOCKER | docker login -u thomptyler --password-stdin'
             }
         }
+        stage('Push'){
+            steps{
+                sh 'docker push thomptyler/flaskapp'
+            }
+        }
     }
 }
