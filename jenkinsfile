@@ -1,18 +1,18 @@
 pipeline {
     agent any
 
+    
     stages {
-        stage('Login and Push'){
+        stage('Login, Build and Push'){
             steps {
                 script{
+                    //sign into docker, build image, and push image to dockerhub
                     withDockerRegistry(credentialsId: 'Docker') {
                         docker.build('thomptyler/flaskapp').push('latest')
                     }
                 }
             }
         }
-    }
-}
         stage('AWS Commands'){
             steps {
                 script {
@@ -23,8 +23,6 @@ pipeline {
                 }
             }
         }
-    }
-}
         stage('Kubernetes login'){
             steps{
                 script{
