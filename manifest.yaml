@@ -6,7 +6,7 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: thomptyler/flaskapp
+  name: flask-deployment
   namespace: thomptyler-namespace
   labels:
     app: flask
@@ -24,7 +24,7 @@ spec:
       - name: thomptyler/flaskapp
         image: thomptyler/flaskapp
         ports:
-        - containerPort: 5000
+        - containerPort: 8082
         imagePullPolicy: Always
 
 ---
