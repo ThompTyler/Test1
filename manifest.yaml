@@ -21,7 +21,7 @@ spec:
         app: flask
     spec:
       containers:
-      - name: ThompTyler-flask
+      - name: thomptyler/flaskapp
         image: thomptyler/flaskapp
         ports:
         - containerPort: 5000
