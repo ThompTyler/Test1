@@ -26,6 +26,7 @@ spec:
         ports:
         - containerPort: 5000
         imagePullPolicy: Always
+        restartPolicy: Always
 
 ---
 apiVersion: v1
