@@ -24,7 +24,7 @@ spec:
       - name: ThompTyler-flask
         image: thomptyler/flaskapp
         ports:
-        - containerPort: 8082
+        - containerPort: 5000
         imagePullPolicy: Always
 
 ---
